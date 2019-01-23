@@ -1,0 +1,26 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Products</title>
+    <link href="~/css/StyleSheet.css" rel="stylesheet" />
+</head>
+<body>
+    <header class="jumbotron">
+        <h1>Products View</h1>
+    </header>
+    <section class="flex-container">
+        @foreach (string item in Model)
+        {
+            <div class="flex-item">@item</div>
+
+        }
+    </section>
+</body>
+</html>
