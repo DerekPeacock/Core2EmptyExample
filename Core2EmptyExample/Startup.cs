@@ -23,6 +23,7 @@ namespace Core2EmptyExample
         {
             if (env.IsDevelopment())
             {
+                app.UseStaticFiles();
                 app.UseDeveloperExceptionPage();
             }
 

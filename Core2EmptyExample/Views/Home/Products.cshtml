@@ -1,26 +1,28 @@
-﻿
+﻿@using Core2EmptyExample.Models;
 @{
-    Layout = null;
+    Layout = "_Layout";
+    string name;
+    decimal price;
+    string related;
 }
 
-<!DOCTYPE html>
+<header class="jumbotron">
+    <h1>Products View</h1>
+</header>
+<section class="flex-container">
+    @foreach (Product item in Model)
+    {
+        <div class="flex-item">
+            @{ 
+                name = item?.Name ?? "No Product";
+                price = item?.Price ?? 0;
+                related = item?.RelatedProduct?.Name ?? "None";
+            }
+            <h2>@name</h2>
+            <p>@string.Format("Price: {0:c}", price)</p>
+            <p>@string.Format("Related: {0}", related)</p>
+        </div>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Products</title>
-    <link href="~/css/StyleSheet.css" rel="stylesheet" />
-</head>
-<body>
-    <header class="jumbotron">
-        <h1>Products View</h1>
-    </header>
-    <section class="flex-container">
-        @foreach (string item in Model)
-        {
-            <div class="flex-item">@item</div>
+    }
+</section>
 
-        }
-    </section>
-</body>
-</html>

@@ -1,9 +1,5 @@
 ﻿using Core2EmptyExample.Models;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Core2EmptyExample.Controllers
 {
@@ -16,16 +12,19 @@ namespace Core2EmptyExample.Controllers
 
         public ViewResult Products ()
         {
-            List<string> results = new List<string>();
-            foreach(Product p in Product.GetProducts())
-            {
-                string name = p?.Name;
-                decimal? price = p?.Price;
+            //List<string> results = new List<string>();
 
-                results.Add(string.Format("Name: {0}, Price: {1:c}", name, price));
-            }
+            //foreach(Product p in Product.GetProducts())
+            //{
+            //    string name = p?.Name;
+            //    decimal? price = p?.Price;
+            //    string related = p?.RelatedProduct?.Name;
 
-            return View(results);
+            //    results.Add(string.Format("Name: {0}, Price: {1:c}, Related {2}", 
+            //        name, price, related));
+            //}
+
+            return View(Product.GetProducts());
         }
     }
 }

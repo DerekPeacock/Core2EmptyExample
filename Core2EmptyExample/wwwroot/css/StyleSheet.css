@@ -1,18 +1,31 @@
 ﻿body 
 {
-    background-color:cornflowerblue;
+    font-size:1.0em;
 }
 
 .flex-container
 {
     display:flex;
+    justify-content:center;
     height:200px;
-    background-color:dodgerblue;
+    background-color:#cac4c4;
 }
 
-.flex-item div
+.flex-container div
 {
-    background-color:wheat;
-    width:100px;
-    font-size: 2.0em;
+    background-color:#f1f68a;
+    width:300px;
+    margin:20px;
+    padding:10px;
+    font-size: 1.4em;
+}
+
+.navbar-brand img
+{
+    height:50px;
+}
+
+footer
+{
+    margin:100px;
 }
