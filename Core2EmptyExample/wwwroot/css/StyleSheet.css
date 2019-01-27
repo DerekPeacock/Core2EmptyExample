@@ -6,18 +6,29 @@
 .flex-container
 {
     display:flex;
-    justify-content:center;
-    height:200px;
+    max-width: 1400px;
+    margin: 40px auto 0 auto;
     background-color:#cac4c4;
+    padding:10px;
 }
 
-.flex-container div
+.flex-item
 {
     background-color:#f1f68a;
-    width:300px;
-    margin:20px;
-    padding:10px;
+    width: 30%;
+    box-sizing: border-box;
+    padding:20px;
     font-size: 1.4em;
+    margin:20px;
+}
+
+@media (min-width:700px)
+{
+    .flex-item
+    {
+        /*display: flex;
+        justify-content: space-between;*/
+    }
 }
 
 .navbar-brand img
