@@ -1,14 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
+
 
 namespace Core2EmptyExample.Models
 {
+    public enum ProductCategories
+    {
+        WaterCraft,
+        Clothing,
+    }
+
     public class Product
     {
         public string Name { get; set; }
 
+        [DisplayFormat(DataFormatString ="{0:c}")]
         public Nullable<decimal> Price { get; set; }
 
         public string Category { get; set; } = "Water Sports";

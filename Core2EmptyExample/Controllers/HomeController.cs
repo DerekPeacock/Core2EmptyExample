@@ -1,10 +1,14 @@
 ﻿using Core2EmptyExample.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
+
 
 namespace Core2EmptyExample.Controllers
 {
     public class HomeController : Controller
     {
+        ProductRepository Repository = ProductRepository.SharedRepository;
+
         public ViewResult Index()
         {
             return View(new string[] { "Robin", "Blue Tit", "Great Tit" });
@@ -26,5 +30,19 @@ namespace Core2EmptyExample.Controllers
 
             return View(Product.GetProducts());
         }
+
+        public IActionResult Product2()
+            => View(ProductRepository.SharedRepository.Products);
+
+        [HttpGet]
+        public IActionResult AddProduct() => View(new Product());
+
+        [HttpPost]
+        public IActionResult AddProduct(Product p)
+        {
+            Repository.AddProduct(p);
+            return RedirectToAction("Products");
+        }
+
     }
 }
